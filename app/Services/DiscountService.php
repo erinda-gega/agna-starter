@@ -13,7 +13,7 @@ class DiscountService
      */
     public static function rateFor(Partner $partner, int $units): float
     {
-        if ($units > 1000) return 0.12;
+        if ($units >= 1000) return 0.12;
         if ($units >= 500) return 0.07;
 
         return 0.03;
