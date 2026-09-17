@@ -25,6 +25,16 @@
                 </option>
             @endforeach
         </select>
+
+        <label for="start_date">Ordered from</label>
+        <input type="date" name="start_date" id="start_date" value="{{ $startDate }}" onchange="this.form.submit()">
+
+        <label for="end_date">Ordered to</label>
+        <input type="date" name="end_date" id="end_date" value="{{ $endDate }}" onchange="this.form.submit()">
+
+        @if ($selectedPartnerId || $selectedStatus || $startDate || $endDate)
+            <a href="{{ url('/orders') }}">Clear filters</a>
+        @endif
     </form>
 
     <table>
